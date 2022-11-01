@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for datree.
 GH_REPO="https://github.com/datreeio/datree"
 TOOL_NAME="datree"
 TOOL_TEST="datree version"
@@ -31,7 +30,7 @@ list_github_tags() {
 }
 
 list_all_versions() {
-  # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
+  # By default we simply list the tag names from GitHub releases.
   # Change this function if datree has other means of determining installable versions.
   list_github_tags
 }
@@ -41,8 +40,13 @@ download_release() {
   version="$1"
   filename="$2"
 
-  # TODO: Adapt the release URL convention for datree
-  url="$GH_REPO/archive/v${version}.tar.gz"
+
+
+  # eg 
+  # https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Linux_x86_64.zip
+  # or
+  # https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Darwin_arm64.zip
+  url="$GH_REPO/arcreleases/download/${version}/datree-cli_${version}_$(uname -s)_$(uname -m).zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -61,7 +65,6 @@ install_version() {
     mkdir -p "$install_path"
     cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-    # TODO: Assert datree executable exists.
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
     test -x "$install_path/$tool_cmd" || fail "Expected $install_path/$tool_cmd to be executable."

@@ -3,7 +3,7 @@
 # asdf-datree [![Build](https://github.com/lukeab/asdf-datree/actions/workflows/build.yml/badge.svg)](https://github.com/lukeab/asdf-datree/actions/workflows/build.yml) [![Lint](https://github.com/lukeab/asdf-datree/actions/workflows/lint.yml/badge.svg)](https://github.com/lukeab/asdf-datree/actions/workflows/lint.yml)
 
 
-[datree](<TOOL HOMEPAGE>) plugin for the [asdf version manager](https://asdf-vm.com).
+[datree](https://www.datree.io/) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
@@ -16,10 +16,7 @@
 
 # Dependencies
 
-**TODO: adapt this section**
-
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+Standalone binary so no dependencies identified to date.
 
 # Install
 
