@@ -40,11 +40,8 @@ download_release() {
   version="$1"
   filename="$2"
 
-
-
-  # eg 
+  # eg
   # https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Linux_x86_64.zip
-  # https://github.com/datreeio/datree/arcreleases/download/1.6.48/datree-cli_1.6.48_Linux_x86_64.zip
   # or
   # https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Darwin_arm64.zip
   url="$GH_REPO/releases/download/${version}/datree-cli_${version}_$(uname -s)_$(uname -m).zip"
