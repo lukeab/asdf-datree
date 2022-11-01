@@ -44,9 +44,10 @@ download_release() {
 
   # eg 
   # https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Linux_x86_64.zip
+  # https://github.com/datreeio/datree/arcreleases/download/1.6.48/datree-cli_1.6.48_Linux_x86_64.zip
   # or
   # https://github.com/datreeio/datree/releases/download/1.6.48/datree-cli_1.6.48_Darwin_arm64.zip
-  url="$GH_REPO/arcreleases/download/${version}/datree-cli_${version}_$(uname -s)_$(uname -m).zip"
+  url="$GH_REPO/releases/download/${version}/datree-cli_${version}_$(uname -s)_$(uname -m).zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
